@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %} Главная страница {% endblock %}
+{% block content %}
+<main class="main">
+        <div id="main-content" class="container mb-10">
+            <h1 class="title">Welcome to my Web App</h1>
+            <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus saepe nihil quidem reprehenderit error numquam odio libero quasi! Ipsam error voluptatibus sapiente excepturi quod, sit hic natus voluptatem aliquam! Cumque!</p>
+            <a href="https://tengrinews.kz/" class="primary-button">Read</a>
+        </div>
+        <div class="container">
+            <h2 class="title">Last news</h2>
+            {% for post in posts %}
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{ post.title }}</h3>
+                    <h4>{{ post.postDate }}</h4>
+                    <p>{{ post.content|truncatewords:12 }}</p>
+                    <a href="https://tengrinews.kz/" class="primary-button">Read</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+{% endblock %}
